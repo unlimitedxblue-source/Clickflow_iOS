@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clickflow - 公式サポート & プライバシーポリシー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card-bg: rgba(22, 25, 37, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --accent: #00f0ff;
+      --accent-secondary: #10b981;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --font: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      padding: 40px 20px;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(0, 240, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .tab-btn {
+      padding: 10px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      color: #fff;
+      background: rgba(0, 240, 255, 0.15);
+      border-color: var(--accent);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin: 24px 0 10px;
+      color: #e5e7eb;
+    }
+
+    p {
+      color: #d1d5db;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      color: #d1d5db;
+    }
+
+    li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-secondary);
+      font-weight: bold;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-box {
+      background: rgba(0, 240, 255, 0.05);
+      border: 1px dashed rgba(0, 240, 255, 0.3);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .contact-email {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.85rem;
+      margin-top: 60px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">iOS 17+ Utility</span>
+      <h1>Clickflow</h1>
+      <p class="subtitle">ポケット誤操作防止 ＆ 音量ボタントリガー・ユーティリティ</p>
+    </header>
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="showSection('support')">サポート ＆ FAQ</button>
+      <button class="tab-btn" onclick="showSection('privacy')">プライバシーポリシー</button>
+    </div>
+
+    <!-- サポートセクション -->
+    <section id="support-section">
+      <div class="card">
+        <h2>アプリについて</h2>
+        <p><strong>Clickflow（クリックフロー）</strong>は、ポケットやバッグ内でのiPhoneの誤タッチ・誤操作を防止し、画面を見ずに音量ボタンから瞬時にお好みのショートカットを実行できるユーティリティアプリです。</p>
+        
+        <h3>主な機能</h3>
+        <ul>
+          <li><strong>ポケットガード</strong>: CoreMotionセンサーが画面下向きのポケット収納状態を検知し、全画面を保護。誤タッチを完全にブロックします。</li>
+          <li><strong>音量ボタンショートカット</strong>: 音量ボタンを押すだけで、登録したiOSショートカットを即座に実行します。</li>
+          <li><strong>OLED最適化</strong>: 有機ELディスプレイに配慮した完全黒（True Black）表示で省電力を実現。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>よくあるご質問 (FAQ)</h2>
+        <div class="faq-item">
+          <div class="faq-q">Q. ポケットガードを解除するにはどうすればよいですか？</div>
+          <div class="faq-a">A. ポケットガード画面の任意の位置を3秒間長押しすることで、安全に通常画面へ復帰できます。また、端末を上向きに取り出すと自動的にガードが解除されます。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Q. 音量ボタンを押してもショートカットが実行されません</div>
+          <div class="faq-a">A. ショートカットアプリ内に登録されているショートカット名と、Clickflowの設定画面で指定した名前が完全一致しているかご確認ください。また、初回実行時はiOSの確認ダイアログが表示される場合があります。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Q. ショートカット実行後にClickflowへ自動復帰しません</div>
+          <div class="faq-a">A. ショートカット内の最後のアクションが「別のアプリを開く」になっている場合、Appleの仕様により元のアプリへの自動コールバックが行われません。定型処理やメモ、音声入力等のショートカットでご利用ください。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>お問い合わせ・サポート</h2>
+        <p>ご意見、ご要望、不具合のご報告などのお問い合わせは、以下のサポート窓口までお気軽にご連絡ください。</p>
+        <div class="contact-box">
+          <p style="margin-bottom: 6px; font-size: 0.9rem; color: #9ca3af;">サポート窓口（メール）</p>
+          <a href="mailto:unlimitedxblue@gmail.com" class="contact-email">unlimitedxblue@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- プライバシーポリシーセクション -->
+    <section id="privacy-section" class="hidden">
+      <div class="card">
+        <h2>プライバシーポリシー</h2>
+        <p>制定日: 2026年8月25日</p>
+        <p><strong>Clickflow（以下「当アプリ」）</strong>は、ユーザーの皆様のプライバシーを最重要視し、個人情報の保護に努めています。本プライバシーポリシーでは、当アプリにおける情報の取り扱いについて説明します。</p>
+
+        <h3>1. 取得する情報および利用目的</h3>
+        <ul>
+          <li><strong>モーションセンサーデータ (CoreMotion)</strong>: 端末の向き（画面下向き傾斜）を判定し、ポケットガード機能（画面保護）を作動させるためにリアルタイムで利用します。このデータは端末内（ローカル）でのみリアルタイムに処理され、端末外や外部サーバーへ送信・保存されることは一切ありません。</li>
+          <li><strong>音量ボタン操作 (AVAudioSession)</strong>: 音量ボタン押下の検知および元の音量値の復元のために利用します。操作ログや音声データ等は一切記録・収集・送信されません。</li>
+          <li><strong>ショートカット設定</strong>: ユーザーが割り当てたショートカット名等の設定値は、端末内のローカルストレージ（UserDefaults）にのみ保存されます。</li>
+        </ul>
+
+        <h3>2. 個人情報の収集・外部送信について</h3>
+        <p>当アプリは、氏名、住所、メールアドレス、電話番号、位置情報などの個人を特定できる情報を収集しません。また、いかなる外部サーバーへの通信・データ送信も行いません。</p>
+
+        <h3>3. 第三者提供・トラッキングSDK</h3>
+        <p>当アプリには、ユーザーの行動履歴をトラッキングする解析ツール（アナリティクス）や広告配信SDK等の外部モジュールは一切組み込まれておりません。ユーザーのデータが第三者に提供されることはありません。</p>
+
+        <h3>4. プライバシーポリシーの改定</h3>
+        <p>本ポリシーの内容は、法令の変更や機能の追加に伴い改定されることがあります。改定が行われた場合は、本ページにて最新のポリシーを公開します。</p>
+
+        <h3>5. お問い合わせ窓口</h3>
+        <p>本プライバシーポリシーに関するお問い合わせは、下記までお願いいたします。</p>
+        <div class="contact-box">
+          <a href="mailto:unlimitedxblue@gmail.com" class="contact-email">unlimitedxblue@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 K.Labo. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function showSection(section) {
+      const support = document.getElementById('support-section');
+      const privacy = document.getElementById('privacy-section');
+      const btns = document.querySelectorAll('.tab-btn');
+
+      if (section === 'support') {
+        support.classList.remove('hidden');
+        privacy.classList.add('hidden');
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      } else {
+        support.classList.add('hidden');
+        privacy.classList.remove('hidden');
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+      }
+    }
+
+    // URLハッシュ判定 (#privacy 等)
+    if (window.location.hash === '#privacy') {
+      showSection('privacy');
+    }
+  </script>
+</body>
+</html>
