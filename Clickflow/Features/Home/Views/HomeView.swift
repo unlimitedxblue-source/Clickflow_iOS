@@ -74,6 +74,8 @@ struct HomeView: View {
             }
             .sheet(isPresented: $showingHelpGuide) {
                 HelpGuideView()
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
             }
         }
         .preferredColorScheme(.dark)
@@ -83,9 +85,7 @@ struct HomeView: View {
                 if !newValue { viewModel.manualRecover() }
             }
         )) {
-            ActiveGuardOverlayView(onManualRecover: {
-                viewModel.manualRecover()
-            })
+            ActiveGuardOverlayView()
         }
         .sensoryFeedback(.impact(weight: .heavy), trigger: viewModel.isGuardActive)
         .sensoryFeedback(.success, trigger: viewModel.commandFeedbackToken)
