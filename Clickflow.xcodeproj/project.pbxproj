@@ -15,6 +15,7 @@
 		2E31772780B02AE33229A135 /* GuardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB413F6A319EF94230F2D4A1 /* GuardViewModel.swift */; };
 		35CEC0F8714B5871FF54D253 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361806F62866BA8AC29524C3 /* GlassCard.swift */; };
 		49903346B88677541299BD94 /* CommandPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21334760B1501A002AA778AE /* CommandPreset.swift */; };
+		5CA5D9BFEFB465E15F026484 /* HelpGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C916EC66E574EDD49E43A22 /* HelpGuideView.swift */; };
 		68BCE2C16C01E3C21B4587CC /* ShortcutRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EAE173B62FCDA3C6EC1323 /* ShortcutRunner.swift */; };
 		6F731985F4BB0F194C2DF41F /* MotionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8BAE032F3700B6B45D524A /* MotionDetector.swift */; };
 		A8908860711413EC9E16F2C3 /* ActiveGuardOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D03117F88C9D70523541501 /* ActiveGuardOverlayView.swift */; };
@@ -37,6 +38,7 @@
 		676CF4A1B1C59AD009CE30BD /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		7E2973F982E3FCEC7F9D6D47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCCBD47D9197179E1F6B9FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9C916EC66E574EDD49E43A22 /* HelpGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpGuideView.swift; sourceTree = "<group>"; };
 		A52EEF84BA9818C3D436D8E7 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		A8EAE173B62FCDA3C6EC1323 /* ShortcutRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutRunner.swift; sourceTree = "<group>"; };
 		B0CD65470FC7F75A9590A5CB /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				0D03117F88C9D70523541501 /* ActiveGuardOverlayView.swift */,
+				9C916EC66E574EDD49E43A22 /* HelpGuideView.swift */,
 				3897F825A5D4072DB97A55E2 /* HomeView.swift */,
 			);
 			path = Views;
@@ -316,6 +319,7 @@
 				35CEC0F8714B5871FF54D253 /* GlassCard.swift in Sources */,
 				2E31772780B02AE33229A135 /* GuardViewModel.swift in Sources */,
 				05FAD9C5F0AF6A0BDA80169C /* HapticFeedbackManager.swift in Sources */,
+				5CA5D9BFEFB465E15F026484 /* HelpGuideView.swift in Sources */,
 				087BF5DADCC272E1BD953DE7 /* HomeView.swift in Sources */,
 				6F731985F4BB0F194C2DF41F /* MotionDetector.swift in Sources */,
 				BA36936538D766B5B6E306C3 /* PresetStore.swift in Sources */,
@@ -337,7 +341,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 636CG2854J;
 				INFOPLIST_FILE = Clickflow/App/Info.plist;
@@ -483,7 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 636CG2854J;
 				INFOPLIST_FILE = Clickflow/App/Info.plist;

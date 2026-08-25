@@ -13,6 +13,7 @@ struct HomeView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var viewModel = GuardViewModel()
     @State private var isMonitoring = false
+    @State private var showingHelpGuide = false
 
     var body: some View {
         NavigationStack {
@@ -56,11 +57,23 @@ struct HomeView: View {
             .navigationTitle("home.title")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showingHelpGuide = true
+                    } label: {
+                        Image(systemName: "questionmark.circle")
+                            .font(.body)
+                            .foregroundStyle(.white.opacity(0.85))
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: SettingsView()) {
                         Image(systemName: "gearshape.fill")
                     }
                 }
+            }
+            .sheet(isPresented: $showingHelpGuide) {
+                HelpGuideView()
             }
         }
         .preferredColorScheme(.dark)
