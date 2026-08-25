@@ -9,9 +9,8 @@ final class MotionDetector {
     private(set) var currentPitch: Double = 0
     private(set) var currentRoll: Double = 0
 
-    /// Consecutive-sample thresholds guard against a single noisy reading flipping state.
+    /// Pocket entry threshold: device head facing downwards with screen oriented inwards/downwards
     private let pocketPitchThreshold: Double = -1.0
-    private let recoveryPitchThreshold: Double = -0.4
     private let updateInterval: TimeInterval = 1.0 / 30.0
     private let requiredConsecutiveSamples = 5
 
@@ -26,7 +25,7 @@ final class MotionDetector {
         motionManager.deviceMotionUpdateInterval = updateInterval
         motionManager.startDeviceMotionUpdates(to: .main) { [weak self] motion, _ in
             guard let self, let motion else { return }
-            self.process(pitch: motion.attitude.pitch, roll: motion.attitude.roll)
+            self.process(motion: motion)
         }
     }
 
@@ -36,12 +35,18 @@ final class MotionDetector {
         recoveryCandidateCount = 0
     }
 
-    private func process(pitch: Double, roll: Double) {
+    private func process(motion: CMDeviceMotion) {
+        let pitch = motion.attitude.pitch
+        let roll = motion.attitude.roll
+        let gravity = motion.gravity
+
         currentPitch = pitch
         currentRoll = roll
 
         if !isGuardActive {
-            if pitch < pocketPitchThreshold {
+            // Guard Activation: Head down into pocket (pitch < -1.0 or gravity.y > 0.7)
+            let isPocketDown = pitch < pocketPitchThreshold || (gravity.y > 0.7 && gravity.z > -0.2)
+            if isPocketDown {
                 pocketCandidateCount += 1
                 if pocketCandidateCount >= requiredConsecutiveSamples {
                     setGuardActive(true)
@@ -50,7 +55,13 @@ final class MotionDetector {
                 pocketCandidateCount = 0
             }
         } else {
-            if pitch > recoveryPitchThreshold {
+            // Guard Deactivation: Strictly when the device is fully face-up and upright for operation
+            // Prevent accidental recovery when the device is merely turned sideways (landscape/horizontal tilt)
+            let isNotSideways = abs(roll) < 0.45 && abs(gravity.x) < 0.4
+            let isFaceUpOrUpright = (gravity.z < -0.35 && pitch > -0.3) || (pitch > -0.25 && pitch < 1.1 && gravity.z < 0.2)
+            let isFullyFaceUp = isNotSideways && isFaceUpOrUpright
+
+            if isFullyFaceUp {
                 recoveryCandidateCount += 1
                 if recoveryCandidateCount >= requiredConsecutiveSamples {
                     setGuardActive(false)
